@@ -1,0 +1,68 @@
+<script>
+  function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("tab-content-item");
+  for (i = 0; i < x.length; i++) {
+    x[i].classList.remove("active")
+  }
+  document.getElementById(cityName).classList.add("active")
+
+  var x = document.getElementsByClassName("tab-nav-item");
+  for (i = 0; i < x.length; i++) {
+    x[i].classList.remove("active")
+  }
+  document.getElementById('tab-nav-' + cityName).classList.add("active")
+}
+
+
+</script>
+<style>
+.tab-content-item {
+  display: none;
+  position: relative;
+  margin-bottom: var(--gap);
+  padding: var(--gap);
+  background: var(--entry);
+  border-radius: var(--radius);
+  transition: transform .1s;
+  border: 1px solid var(--border);
+}
+.tab-content-item.active {
+  display: block;
+}
+.tab-nav-item{
+  text-decoration: none;
+  box-shadow: 0 0 !important;
+  margin-inline-start: var(--gap);
+}
+.tab-nav-item.active{
+  font-weight: 500;
+  border-bottom: 2px solid;
+}
+.tab-nav-item:first-item{
+  margin-inline-start: 0;
+}
+</style>
+<div class="tab-panel">
+<div class="tab-nav" role="tablist">
+  {{ $tabTotal := .Get "tabTotal" }}
+  {{ $tabRightAlign := .Get "tabRightAlign" }}
+  {{ $tabName := .Scratch.Get "tabName" }}
+  {{ $tabID := .Scratch.Get "tabID" }}
+
+  {{ range $i, $sequence := (seq $tabTotal) }}
+  <a class="tab-nav-item  {{ if eq $i 0 }} active {{ end }}"
+     id="tab-nav-{{ (index $tabID $i) }}" data-toggle="tab" href="#"
+     onClick="openCity('{{(index $tabID $i)}}')"
+     aria-controls="nav-home" aria-selected="true">{{ (replaceRE "(\\s)" "" (index $tabName $i)) }}</a>
+
+  {{ end }}
+
+</div>
+
+<div class="tab-content">
+
+	{{ .Inner }}
+
+</div>
+</div>

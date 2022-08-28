@@ -1,0 +1,139 @@
+baseURL: 'https://blog.jysim3.com'
+title: JunYang
+paginate: 5
+theme:
+  - PaperMod
+
+enableRobotsTXT: true
+buildDrafts: true
+buildFuture: true
+buildExpired: true
+
+# googleAnalytics: UA-123-45
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: JunYang's blog
+  description: "I'm JunYang, a software engineer. I showcase my projects and write my thoughts in the blog here."
+  keywords: [Blog, Portfolio, PaperMod]
+  author: jysim3@
+  # author: ["Me", "You"] # multiple authors
+  images: [""]
+  DateFormat: "2 January 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: false
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: true
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+    #assets:
+    #  # disableHLJS: true # to disable highlight.js
+    #  # disableFingerprinting: true
+    #  favicon: "<link / abs url>"
+    #  favicon16x16: "<link / abs url>"
+    #  favicon32x32: "<link / abs url>"
+    #  apple_touch_icon: "<link / abs url>"
+    #  safari_pinned_tab: "<link / abs url>"
+
+  label:
+    text: "JunYang's Blog"
+    icon: /apple-touch-icon.png
+    iconHeight: 35
+
+  # profile-mode
+  profileMode:
+    enabled: false # needs to be explicitly set
+    title: JunYang
+    subtitle: "Welcome to my blog. Hope you'll learn something here. I showcase my projects and write my thoughts in the blog here."
+    imageUrl: "<img location>"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: posts
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to my blog. Hope you'll learn something here. I showcase my projects and write my thoughts in the blog here.
+
+  socialIcons:
+    - name: instagram
+      url: "https://instagram.com/jysim3"
+    - name: twitter
+      url: "https://twitter.com/jysim37"
+    - name: github
+      url: "https://github.com/jysim3"
+
+        #analytics:
+        #  google:
+        #    SiteVerificationTag: "XYZabc"
+        #  bing:
+        #    SiteVerificationTag: "XYZabc"
+        #  yandex:
+        #    SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: false # hide everywhere but not in structured data
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: false # hide on single page
+
+  editPost:
+    URL: "https://github.com/jysim3/blogger/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: Posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: host
+      name: jysim3.com
+      url: http://jysim3.com
+      weight: 30
+
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
